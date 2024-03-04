@@ -14,7 +14,7 @@ function playGame(computerSelection, playerSelection){
         return 'Game is a tie!'
     } else if (playerSelection != 'rock' && playerSelection != 'scissors' && playerSelection != 'paper') {
         return 'You did not enter Rock, Paper, or Scissors.'
-    } else if ((computerSelection == 'rock' && playerSelection == 'scissors')
+    } else if ((playerSelection == 'rock' && computerSelection == 'scissors')
     || (playerSelection == 'scissors' && computerSelection == 'paper')
     || (playerSelection == 'paper' && computerSelection == 'rock')) {
         return String('You win! You picked ' + playerSelection + ' and the compter picked ' + computerSelection + '.')
