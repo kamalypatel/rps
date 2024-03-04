@@ -23,6 +23,10 @@ function playGame(computerSelection, playerSelection){
     } else if ((computerSelection == 'rock' && playerSelection == 'scissors')
     || (playerSelection == 'scissors' && computerSelection == 'paper')
     || (playerSelection == 'paper' && computerSelection == 'rock')) {
-        return string('You win! You picked' + playerSelection + ' and the compter picked ' + computerSelection)
+        return String('You win! You picked' + playerSelection + ' and the compter picked ' + computerSelection + '.')
+    } else {
+        return String('You lose! You picked' + playerSelection + ' and the compter picked ' + computerSelection + '.')
     }
 }
+
+console.log(playGame(computerSelection, playerSelection))
