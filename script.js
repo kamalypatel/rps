@@ -9,7 +9,17 @@ function getComputerChoice(){
    }
 }
 
-console.log(getComputerChoice())
+function playGame(computerSelection, playerSelection){
+    if (computerSelection == playerSelection) {
+        return 'Game is a tie!'
+    } else if ((computerSelection == 'rock' && playerSelection == 'scissors')
+    || (playerSelection == 'scissors' && computerSelection == 'paper')
+    || (playerSelection == 'paper' && computerSelection == 'rock')) {
+        return String('You win! You picked ' + playerSelection + ' and the compter picked ' + computerSelection + '.')
+    } else {
+        return String('You lose! You picked ' + playerSelection + ' and the compter picked ' + computerSelection + '.')
+    }
+}
 
 let playerSelection = prompt('What is your game choice? (Rock, Paper, Scissors').toLowerCase()
 
@@ -17,16 +27,6 @@ console.log(playerSelection)
 
 let computerSelection = getComputerChoice()
 
-function playGame(computerSelection, playerSelection){
-    if (computerSelection == playerSelection) {
-        return 'Game is a tie!'
-    } else if ((computerSelection == 'rock' && playerSelection == 'scissors')
-    || (playerSelection == 'scissors' && computerSelection == 'paper')
-    || (playerSelection == 'paper' && computerSelection == 'rock')) {
-        return String('You win! You picked' + playerSelection + ' and the compter picked ' + computerSelection + '.')
-    } else {
-        return String('You lose! You picked' + playerSelection + ' and the compter picked ' + computerSelection + '.')
-    }
-}
+console.log(computerSelection)
 
 console.log(playGame(computerSelection, playerSelection))
