@@ -23,12 +23,18 @@ function playGame(computerSelection, playerSelection){
     }
 }
 
-let playerSelection = prompt('What is your game choice? (Rock, Paper, Scissors').toLowerCase()
+function playFiveTimes() {
+    for (let i = 1; i <= 5; i++) {
+        let playerSelection = prompt('What is your game choice? (Rock, Paper, Scissors').toLowerCase()
 
-console.log(playerSelection)
+        console.log(playerSelection)
 
-let computerSelection = getComputerChoice()
+        let computerSelection = getComputerChoice()
 
-console.log(computerSelection)
+        console.log(computerSelection)
 
-console.log(playGame(computerSelection, playerSelection))
+        console.log(playGame(computerSelection, playerSelection))
+    }
+}
+
+console.log(playFiveTimes())
