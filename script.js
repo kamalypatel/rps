@@ -23,18 +23,34 @@ function playGame(computerSelection, playerSelection){
     }
 }
 
-function playFiveTimes() {
-    for (let i = 1; i <= 5; i++) {
-        let playerSelection = prompt('What is your game choice? (Rock, Paper, Scissors').toLowerCase()
+const rock = document.getElementById('rock')
 
-        console.log(playerSelection)
+rock.addEventListener('click', () => {
+    console.log(playGame(getComputerChoice(), 'rock'))
+})
 
-        let computerSelection = getComputerChoice()
+const paper = document.getElementById('paper')
 
-        console.log(computerSelection)
+paper.addEventListener('click', () => {
+    console.log(playGame(getComputerChoice(), 'paper'))
+})
 
-        console.log(playGame(computerSelection, playerSelection))
-    }
-}
+const scissors = document.getElementById('scissors')
 
-console.log(playFiveTimes())
+scissors.addEventListener('click', () => {
+    console.log(playGame(getComputerChoice(), 'scissors'))
+})
+
+
+
+
+/* 
+let playerSelection = prompt('What is your game choice? (Rock, Paper, Scissors').toLowerCase()
+
+console.log(playerSelection)
+
+let computerSelection = getComputerChoice()
+
+console.log(computerSelection)
+    
+console.log(playGame(computerSelection, playerSelection)) */
