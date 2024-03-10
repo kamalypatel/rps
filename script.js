@@ -23,22 +23,33 @@ function playGame(computerSelection, playerSelection){
     }
 }
 
+const resultsContainer = document.querySelector('.results')
+
 const rock = document.getElementById('rock')
 
 rock.addEventListener('click', () => {
-    console.log(playGame(getComputerChoice(), 'rock'))
+    const result = document.createElement('p');
+    result.textContent =  playGame(getComputerChoice(), 'rock');
+
+    resultsContainer.appendChild(result);
 })
 
 const paper = document.getElementById('paper')
 
 paper.addEventListener('click', () => {
-    console.log(playGame(getComputerChoice(), 'paper'))
+    const result = document.createElement('p');
+    result.textContent =  playGame(getComputerChoice(), 'paper');
+
+    resultsContainer.appendChild(result);
 })
 
 const scissors = document.getElementById('scissors')
 
 scissors.addEventListener('click', () => {
-    console.log(playGame(getComputerChoice(), 'scissors'))
+    const result = document.createElement('p');
+    result.textContent =  playGame(getComputerChoice(), 'paper');
+
+    resultsContainer.appendChild(result);
 })
 
 
