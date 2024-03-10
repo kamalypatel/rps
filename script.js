@@ -10,22 +10,41 @@ function getComputerChoice(){
 }
 
 function playGame(computerSelection, playerSelection){
-    if (computerSelection == playerSelection) {
-        return 'Game is a tie!'
-    } else if (playerSelection != 'rock' && playerSelection != 'scissors' && playerSelection != 'paper') {
-        return 'You did not enter Rock, Paper, or Scissors.'
-    } else if ((playerSelection == 'rock' && computerSelection == 'scissors')
-    || (playerSelection == 'scissors' && computerSelection == 'paper')
-    || (playerSelection == 'paper' && computerSelection == 'rock')) {
-        playerScore++;
-
-        return String('You win! You picked ' + playerSelection + ' and the compter picked ' + computerSelection + '. Your score is now ' + playerScore + `. The computer's score is now ` + computerScore + '.')
+    if (playerScore == 5) {
+        return String('This game is already over, you beat the computer!')
+    } else if (computerScore == 5) {
+        return String('This game is already over, the computer beat you!')
     } else {
-        computerScore++;
-
-        return String('You lose! You picked ' + playerSelection + ' and the compter picked ' + computerSelection + '. Your score is now ' + playerScore + `. The computer's score is now ` + computerScore + '.')
+        if (computerSelection == playerSelection) {
+            return 'Game is a tie!'
+        } else if (playerSelection != 'rock' && playerSelection != 'scissors' && playerSelection != 'paper') {
+            return 'You did not enter Rock, Paper, or Scissors.'
+        } else if ((playerSelection == 'rock' && computerSelection == 'scissors')
+        || (playerSelection == 'scissors' && computerSelection == 'paper')
+        || (playerSelection == 'paper' && computerSelection == 'rock')) {
+            playerScore++;
+    
+            if (playerScore == 5) {
+                return String('You win the game! You picked ' + playerSelection + ' and the compter picked ' + computerSelection + '. Your score is now '
+            + playerScore + `. The computer's score is now ` + computerScore + '.')
+            } else {
+                return String('You won that round! You picked ' + playerSelection + ' and the compter picked ' + computerSelection + '. Your score is now '
+            + playerScore + `. The computer's score is now ` + computerScore + '.')
+            }
+        } else {
+            computerScore++;
+    
+            if (computerScore == 5) {
+                return String('You lost the game! You picked ' + playerSelection + ' and the compter picked ' + computerSelection + '. Your score is now '
+                + playerScore + `. The computer's score is now ` + computerScore + '.')
+            } else {
+                return String('You lose that round! You picked ' + playerSelection + ' and the compter picked ' + computerSelection + '. Your score is now '
+            + playerScore + `. The computer's score is now ` + computerScore + '.')
+            }
+        }
     }
-}
+    
+};
 
 const resultsContainer = document.querySelector('.results')
 
